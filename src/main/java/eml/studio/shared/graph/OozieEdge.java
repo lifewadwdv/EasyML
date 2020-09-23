@@ -10,48 +10,55 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 /**
  * Edge of a Oozie workflow graph
  */
-public class OozieEdge implements IsSerializable{
+public class OozieEdge implements IsSerializable {
 
-	/** id of the source node */
-	private String src;
-	/** id of the target node */
-	private String dst;
+    /**
+     * id of the source node
+     */
+    private String src;
+    /**
+     * id of the target node
+     */
+    private String dst;
 
-	public OozieEdge(){}
+    public OozieEdge() {
+    }
 
-	public void init(String src, String dst) {
-		this.setSrc(src);
-		this.setDst(dst);
-	}
+    public void init(String src, String dst) {
+        this.setSrc(src);
+        this.setDst(dst);
+    }
 
-	public String getSrc() {
-		return src;
-	}
+    public String getSrc() {
+        return src;
+    }
 
-	public String getDst() {
-		return dst;
-	}
+    public String getDst() {
+        return dst;
+    }
 
-	/** Generate a XML string for the edge */
-	public String toXML() {
-		StringBuffer sb = new StringBuffer(100);
-		sb.append("<edge>\n");
-		sb.append("  <source>" + getSrc() + "</source>\n");
-		sb.append("  <destination>" + getDst() + "</destination>\n");
-		sb.append("</edge>\n");
-		return sb.toString();
-	}
+    /**
+     * Generate a XML string for the edge
+     */
+    public String toXML() {
+        StringBuffer sb = new StringBuffer(100);
+        sb.append("<edge>\n");
+        sb.append("  <source>" + getSrc() + "</source>\n");
+        sb.append("  <destination>" + getDst() + "</destination>\n");
+        sb.append("</edge>\n");
+        return sb.toString();
+    }
 
-	public void setSrc(String src) {
-		this.src = src;
-	}
+    public void setSrc(String src) {
+        this.src = src;
+    }
 
-	public void setDst(String dst) {
-		this.dst = dst;
-	}
+    public void setDst(String dst) {
+        this.dst = dst;
+    }
 
-	@Override
-	public String toString() {
-		return "OozieEdge [src=" + src + ", dst=" + dst +"]";
-	}
+    @Override
+    public String toString() {
+        return "OozieEdge [src=" + src + ", dst=" + dst + "]";
+    }
 }

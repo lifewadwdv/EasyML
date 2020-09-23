@@ -74,6 +74,7 @@ public class DataAnalysisService{
 		// Use multi-thread to data analysis and get selected column data
 		ExecutorService exec = Executors.newCachedThreadPool();
 		int threadNum = ThreadUtils.THREAD_NUM;
+		assert results != null;
 		int count = (int)Math.ceil(results.size() / threadNum);
 		for(int i=0; i<threadNum; i++){ 
 			int startInx = i*count;

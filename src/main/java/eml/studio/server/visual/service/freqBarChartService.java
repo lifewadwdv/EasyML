@@ -104,7 +104,7 @@ public class freqBarChartService extends ChartService {
 			{
 				if(data == null || "".equals(data.trim()))
 					continue;
-				double value = Double.valueOf(data);
+				double value = Double.parseDouble(data);
 				if(value > max)
 					max = value;
 				if(value < min)
@@ -158,7 +158,7 @@ public class freqBarChartService extends ChartService {
 					{
 						for(int i=0;i<bags.length;i++)
 						{
-							double dataT = Double.valueOf(data);
+							double dataT = Double.parseDouble(data);
 							if(i == 0)
 							{
 								a = (int) Math.floor(min);
@@ -213,7 +213,7 @@ public class freqBarChartService extends ChartService {
 						double b = m3(Math.ceil(max)); 
 						for(int i=0;i<bags.length;i++)
 						{
-							double dataT = Double.valueOf(data);
+							double dataT = Double.parseDouble(data);
 							if(i == 0)
 							{
 								a = m3(Math.floor(min));

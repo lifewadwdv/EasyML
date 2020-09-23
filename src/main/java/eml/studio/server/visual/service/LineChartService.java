@@ -48,10 +48,7 @@ public class LineChartService extends ChartService {
 		for(String  selectedCol : columnNames)
 		{
 			LineChart lineChart =  singleLineGen(results, dataType, columns, selectedCol);
-			if(lineChart == null)
-				continue;
-			else
-				lineCharts.add(lineChart);
+			lineCharts.add(lineChart);
 		}
 
 		return lineCharts;
@@ -126,7 +123,7 @@ public class LineChartService extends ChartService {
 			for(String data : datas) {
 				if(data == null || "".equals(data.trim()))
 					continue;
-				double value = Double.valueOf(data);
+				double value = Double.parseDouble(data);
 				linelabels.put(index, value);
 				index++;
 			}

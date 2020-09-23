@@ -120,7 +120,7 @@ public class ScatterChartService extends ChartService {
 				{
 					if(data_c == null || "".equals(data_c.trim()))
 						continue;
-					double value = Double.valueOf(data_c);
+					double value = Double.parseDouble(data_c);
 					if(value > max)
 						max = value;
 					if(value < min)
@@ -131,7 +131,7 @@ public class ScatterChartService extends ChartService {
 					String data_x = datas_x.get(i);
 					if(logScale_x)
 					{
-						if(Double.valueOf(data_x)>0)
+						if(Double.parseDouble(data_x)>0)
 							data_x = logData(data_x);
 						else
 							continue;
@@ -139,7 +139,7 @@ public class ScatterChartService extends ChartService {
 					String data_y = datas_y.get(i);
 					if(logScale_y)
 					{
-						if(Double.valueOf(data_y)>0)
+						if(Double.parseDouble(data_y)>0)
 							data_y = logData(data_y);
 						else
 							continue;
@@ -164,7 +164,7 @@ public class ScatterChartService extends ChartService {
 					String data_x = datas_x.get(i);
 					if(logScale_x)
 					{
-						if(Double.valueOf(data_x)>0)
+						if(Double.parseDouble(data_x)>0)
 							data_x = logData(data_x);
 						else
 							continue;
@@ -172,7 +172,7 @@ public class ScatterChartService extends ChartService {
 					String data_y = datas_y.get(i);
 					if(logScale_y)
 					{
-						if(Double.valueOf(data_y)>0)
+						if(Double.parseDouble(data_y)>0)
 							data_y = logData(data_y);
 						else
 							continue;
@@ -210,7 +210,7 @@ public class ScatterChartService extends ChartService {
 	 */
 	private String logData(String data)
 	{
-		double result = Math.log(Double.valueOf(data));
+		double result = Math.log(Double.parseDouble(data));
 		return String.valueOf(m3(result));
 	}
 }
