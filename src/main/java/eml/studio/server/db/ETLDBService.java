@@ -9,5 +9,6 @@ import java.util.ArrayList;
 
 public abstract class ETLDBService {
     public abstract ArrayList<String> getTables(String url, String user, String passwd);
+
     public abstract ArrayList<String> getColumns(String url, String user, String passwd, String table);
 }

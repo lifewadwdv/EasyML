@@ -10,12 +10,12 @@ import org.dom4j.Element;
 
 public class DistributeActionNodeDef extends ActionNodeDef {
 
-	public DistributeActionNodeDef(Program program, String nodeId, String cmdLine) {
-		super(program, nodeId, cmdLine);
-	}
+    public DistributeActionNodeDef(Program program, String nodeId, String cmdLine) {
+        super(program, nodeId, cmdLine);
+    }
 
-	@Override
-	protected void appendFileParameter(Element shell) {
-	}
+    @Override
+    protected void appendFileParameter(Element shell) {
+    }
 
 }

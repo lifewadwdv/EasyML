@@ -12,15 +12,15 @@ import java.util.ArrayList;
 
 public interface ETLServiceAsync {
 
-	void SqlETLGetTables(String url, String user, String passwd,
-			AsyncCallback<ArrayList<String>> callback) throws IllegalArgumentException;
-	
-	void SqlETLGetColumns(String url, String user, String passwd,
-			String table,AsyncCallback<ArrayList<String>> callback)throws IllegalArgumentException;
-	
-	void HiveETLGetTables(String url, String user, String passwd,
-			AsyncCallback<ArrayList<String>> callback)throws IllegalArgumentException;
-	
-	void HiveETLGetColumns(String url, String user, String passwd,
-			String table,AsyncCallback<ArrayList<String>> callback) throws IllegalArgumentException;
+    void SqlETLGetTables(String url, String user, String passwd,
+                         AsyncCallback<ArrayList<String>> callback) throws IllegalArgumentException;
+
+    void SqlETLGetColumns(String url, String user, String passwd,
+                          String table, AsyncCallback<ArrayList<String>> callback) throws IllegalArgumentException;
+
+    void HiveETLGetTables(String url, String user, String passwd,
+                          AsyncCallback<ArrayList<String>> callback) throws IllegalArgumentException;
+
+    void HiveETLGetColumns(String url, String user, String passwd,
+                           String table, AsyncCallback<ArrayList<String>> callback) throws IllegalArgumentException;
 }

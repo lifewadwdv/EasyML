@@ -16,23 +16,21 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * String Encryption and Decryption service implemention use aes algorithom
- *
  */
 public class AesServiceImpl extends RemoteServiceServlet implements AesService {
-	private static final long serialVersionUID = 1L;
-	private static Logger logger = Logger.getLogger(AesServiceImpl.class.getName());
-	
-	@Override
-	public List<String> aesEncrypt(List<String> contents) {
-		// TODO Auto-generated method stub
-		List<String> encryptConts = new ArrayList<String>();
-		for(String content : contents)
-		{
-			String encryptCont = Aes.aesEncrypt(content);
-			encryptConts.add(encryptCont);
-		}
-		return encryptConts;
-	}
+    private static final long serialVersionUID = 1L;
+    private static Logger logger = Logger.getLogger(AesServiceImpl.class.getName());
+
+    @Override
+    public List<String> aesEncrypt(List<String> contents) {
+        // TODO Auto-generated method stub
+        List<String> encryptConts = new ArrayList<String>();
+        for (String content : contents) {
+            String encryptCont = Aes.aesEncrypt(content);
+            encryptConts.add(encryptCont);
+        }
+        return encryptConts;
+    }
 
 
 }

@@ -13,26 +13,26 @@ import org.dom4j.Element;
  */
 public class ShellActionNodeDef extends ActionNodeDef {
 
-	public ShellActionNodeDef(Program program, String nodeId, String cmdLine) {
-		super(program, nodeId, cmdLine);
-	}
+    public ShellActionNodeDef(Program program, String nodeId, String cmdLine) {
+        super(program, nodeId, cmdLine);
+    }
 
-	@Override
-	protected void appendFileParameter(Element shell) {
+    @Override
+    protected void appendFileParameter(Element shell) {
 
-		// add all input file arguments to the shell xml element
-		int inCnt = inputFiles.size();
-		for( int i = 0; i < inCnt; ++ i ){
-			generateElement(shell, "argument", "HDFS");
-			generateElement(shell, "argument", inputFiles.get(i));
-		}
+        // add all input file arguments to the shell xml element
+        int inCnt = inputFiles.size();
+        for (int i = 0; i < inCnt; ++i) {
+            generateElement(shell, "argument", "HDFS");
+            generateElement(shell, "argument", inputFiles.get(i));
+        }
 
-		//add all output file arguments to the shell xml element
-		int outCnt = outputFiles.size();
-		for( int j = 0; j < outCnt; ++ j ){
-			generateElement(shell, "argument", outputFiles.get(j));
-		}
+        //add all output file arguments to the shell xml element
+        int outCnt = outputFiles.size();
+        for (int j = 0; j < outCnt; ++j) {
+            generateElement(shell, "argument", outputFiles.get(j));
+        }
 
-	}
+    }
 
 }

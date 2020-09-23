@@ -51,7 +51,7 @@ public interface AccountService extends RemoteService {
 	/**
 	 * Verify a token
 	 *
-	 * @param verifytoken
+	 * @param token token
 	 * @return account object
 	 */
 	Account verify(String token);

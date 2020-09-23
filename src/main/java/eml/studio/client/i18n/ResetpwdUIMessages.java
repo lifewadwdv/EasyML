@@ -9,20 +9,31 @@ import com.google.gwt.i18n.client.Messages;
 
 public interface ResetpwdUIMessages extends Messages {
 
-	String resetpwd();
-	String resetPwd();
-	String resetVer();
+    String resetpwd();
 
-	String emailFormatErrorMsg();
-	String emailHasnotRegisterMsg();
-	String sendEmailErrMsg();
-	String sendEmailSuccessMsg();
-	String emailNotExistMsg();
-	String passwordResetSuccessMsg();
-	String passwordEmptyMsg();
-	String passwordLengthMsg();
-	String passwordMismatchMsg();
-	String otherErrMsg();
+    String resetPwd();
 
-	String confirm();
+    String resetVer();
+
+    String emailFormatErrorMsg();
+
+    String emailHasnotRegisterMsg();
+
+    String sendEmailErrMsg();
+
+    String sendEmailSuccessMsg();
+
+    String emailNotExistMsg();
+
+    String passwordResetSuccessMsg();
+
+    String passwordEmptyMsg();
+
+    String passwordLengthMsg();
+
+    String passwordMismatchMsg();
+
+    String otherErrMsg();
+
+    String confirm();
 }

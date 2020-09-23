@@ -12,13 +12,13 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 @RemoteServiceRelativePath("aesservice")
 public interface AesService extends RemoteService {
-	
-  /**
-   * Encryption  use aes algorithom
-   * 
-   * @param contents  data list to encrypt
-   * @return
-   */
-  List<String> aesEncrypt(List<String> contents);
+
+    /**
+     * Encryption  use aes algorithom
+     *
+     * @param contents data list to encrypt
+     * @return
+     */
+    List<String> aesEncrypt(List<String> contents);
 
 }

@@ -11,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- *A comment is used to describe password
+ * A comment is used to describe password
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)

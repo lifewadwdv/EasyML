@@ -12,12 +12,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 
  * TableField A comment is used to describe
  * whether an entity class's domain is in a database
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface TableField {
-	public String name() default "";
+    public String name() default "";
 }

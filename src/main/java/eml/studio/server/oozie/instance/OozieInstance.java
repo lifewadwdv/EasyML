@@ -72,8 +72,8 @@ public class OozieInstance {
 		bdaJob.setCurOozJobId(oozJobId);
 		bdaJob.setLastSubmitTime(TimeUtils.getTime());
 
-		String cond[] = {"job_id"};
-		String setFields[] = {"oozie_job", "job_name", "account",
+		String[] cond = {"job_id"};
+		String[] setFields = {"oozie_job", "job_name", "account",
 		"last_submit_time"};
 		SecureDao.update(bdaJob, setFields, cond);
 

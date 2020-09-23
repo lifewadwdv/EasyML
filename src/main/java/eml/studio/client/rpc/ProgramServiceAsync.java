@@ -6,35 +6,36 @@
 package eml.studio.client.rpc;
 
 import java.util.List;
+
 import eml.studio.shared.model.Program;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface ProgramServiceAsync {
 
-  void getSize(AsyncCallback<Integer> callback);
-  
-  void loadPart(int start, int size, AsyncCallback<List<Program>> callback);
-  
-  void load(AsyncCallback<List<Program>> callback);
+    void getSize(AsyncCallback<Integer> callback);
 
-  void load(String id, AsyncCallback<Program> callback);
-  
-  void load(Program program, AsyncCallback<List<Program>> callback);
+    void loadPart(int start, int size, AsyncCallback<List<Program>> callback);
 
-  void upload(Program program, String src_uri, AsyncCallback<Program> callback);
+    void load(AsyncCallback<List<Program>> callback);
 
-  void editCategory(String oldCate, String newCate, AsyncCallback<String> callback);
-  
-  void edit(Program program, AsyncCallback<Void> callback);
+    void load(String id, AsyncCallback<Program> callback);
 
-  void delete(String id, AsyncCallback<Void> callback);
+    void load(Program program, AsyncCallback<List<Program>> callback);
 
-  void deprecate(String id, AsyncCallback<Void> callback);
+    void upload(Program program, String src_uri, AsyncCallback<Program> callback);
 
-  void download(String id, AsyncCallback<String> callback);
+    void editCategory(String oldCate, String newCate, AsyncCallback<String> callback);
 
-  void upgrade(String id, String newID, AsyncCallback<Void> callback);
-  
-  void search(Program program, String startDate, String endDate, int limitStart, int limitSize, AsyncCallback<List<Program>> callback);
+    void edit(Program program, AsyncCallback<Void> callback);
+
+    void delete(String id, AsyncCallback<Void> callback);
+
+    void deprecate(String id, AsyncCallback<Void> callback);
+
+    void download(String id, AsyncCallback<String> callback);
+
+    void upgrade(String id, String newID, AsyncCallback<Void> callback);
+
+    void search(Program program, String startDate, String endDate, int limitStart, int limitSize, AsyncCallback<List<Program>> callback);
 
 }

@@ -17,25 +17,28 @@ import java.util.ArrayList;
  */
 public class ETLServiceImpl extends RemoteServiceServlet implements ETLService {
 
-	private SqlETL sqlETL = new SqlETL();
+    private SqlETL sqlETL = new SqlETL();
 
-	private HiveETL hiveETL = new HiveETL();
+    private HiveETL hiveETL = new HiveETL();
 
-	@Override
-	public ArrayList<String> SqlETLGetTables(String url, String user, String passwd){
-		return  sqlETL.getTables(url, user, passwd);
-	}
-	@Override
-	public ArrayList<String> SqlETLGetColumns(String url, String user, String passwd, String table) {
-		return  sqlETL.getColumns( url, user, passwd, table);
-	}
-	@Override
-	public ArrayList<String> HiveETLGetTables(String url, String user, String passwd){
-		return  hiveETL.getTables(url, user, passwd);
-	}
-	@Override
-	public ArrayList<String> HiveETLGetColumns(String url, String user, String passwd, String table){
+    @Override
+    public ArrayList<String> SqlETLGetTables(String url, String user, String passwd) {
+        return sqlETL.getTables(url, user, passwd);
+    }
 
-		return hiveETL.getColumns( url, user, passwd, table);
-	}
+    @Override
+    public ArrayList<String> SqlETLGetColumns(String url, String user, String passwd, String table) {
+        return sqlETL.getColumns(url, user, passwd, table);
+    }
+
+    @Override
+    public ArrayList<String> HiveETLGetTables(String url, String user, String passwd) {
+        return hiveETL.getTables(url, user, passwd);
+    }
+
+    @Override
+    public ArrayList<String> HiveETLGetColumns(String url, String user, String passwd, String table) {
+
+        return hiveETL.getColumns(url, user, passwd, table);
+    }
 }

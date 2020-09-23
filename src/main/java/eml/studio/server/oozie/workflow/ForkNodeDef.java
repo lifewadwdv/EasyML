@@ -9,25 +9,25 @@ import org.dom4j.Element;
 
 /**
  * The fork node for Oozie fork action
- * @author Roger
  *
+ * @author Roger
  */
 public class ForkNodeDef extends ControlNodeDef {
 
-	public ForkNodeDef(String name) {
-		super(name);
-	}
+    public ForkNodeDef(String name) {
+        super(name);
+    }
 
-	@Override
-	public void append2XML(Element root) {
-		Element fork = root.addElement("fork");
-		fork.addAttribute("name", getName());
+    @Override
+    public void append2XML(Element root) {
+        Element fork = root.addElement("fork");
+        fork.addAttribute("name", getName());
 
-		for (NodeDef node : outNodes) {
-			Element path = fork.addElement("path");
-			path.addAttribute("start", node.getName());
-		}
+        for (NodeDef node : outNodes) {
+            Element path = fork.addElement("path");
+            path.addAttribute("start", node.getName());
+        }
 
-	}
+    }
 
 }
