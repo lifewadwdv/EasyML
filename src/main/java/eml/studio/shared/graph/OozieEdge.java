@@ -43,8 +43,8 @@ public class OozieEdge implements IsSerializable {
     public String toXML() {
         StringBuffer sb = new StringBuffer(100);
         sb.append("<edge>\n");
-        sb.append("  <source>" + getSrc() + "</source>\n");
-        sb.append("  <destination>" + getDst() + "</destination>\n");
+        sb.append("  <source>").append(getSrc()).append("</source>\n");
+        sb.append("  <destination>").append(getDst()).append("</destination>\n");
         sb.append("</edge>\n");
         return sb.toString();
     }

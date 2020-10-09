@@ -63,14 +63,14 @@ public class OozieProgramNode extends OozieNode implements IsSerializable {
 
     public void initAsScriptNode(List<String> outFileIdList,
                                  String script) {
-        for (String fileId : outFileIdList) files.add(fileId);
+        files.addAll(outFileIdList);
         this.script = script;
         this.standaloneScript = true;
     }
 
     public void initAsCommonNode(List<String> outFileIdList, List<String> paramList) {
-        for (String fileId : outFileIdList) files.add(fileId);
-        for (String param : paramList) params.add(param);
+        files.addAll(outFileIdList);
+        params.addAll(paramList);
     }
 
     public void initAsSqlNode(List<String> outFileIdList,
@@ -81,9 +81,9 @@ public class OozieProgramNode extends OozieNode implements IsSerializable {
                               List<String> dy_input_aliases,
                               List<String> dy_output_aliases,
                               String script) {
-        for (String fileId : outFileIdList) files.add(fileId);
-        for (String param : input_aliases) this.input_aliases.add(param);
-        for (String param : output_aliases) this.output_aliases.add(param);
+        files.addAll(outFileIdList);
+        this.input_aliases.addAll(input_aliases);
+        this.output_aliases.addAll(output_aliases);
         setScript(script);
     }
 
@@ -132,31 +132,31 @@ public class OozieProgramNode extends OozieNode implements IsSerializable {
     }
 
     public void genXML(StringBuffer sb) {
-        sb.append("  <id>" + id + "</id>\n");
-        sb.append("  <moduleId>" + moduleId + "</moduleId>\n");
-        sb.append("  <oozJob>" + getOozJobId() + "</oozJob>\n");
-        sb.append("  <x>" + x + "</x>\n");
-        sb.append("  <y>" + y + "</y>\n");
-        sb.append("  <work_path>" + String.valueOf(getWorkPath()) + "</work_path>\n");
+        sb.append("  <id>").append(id).append("</id>\n");
+        sb.append("  <moduleId>").append(moduleId).append("</moduleId>\n");
+        sb.append("  <oozJob>").append(getOozJobId()).append("</oozJob>\n");
+        sb.append("  <x>").append(x).append("</x>\n");
+        sb.append("  <y>").append(y).append("</y>\n");
+        sb.append("  <work_path>").append(String.valueOf(getWorkPath())).append("</work_path>\n");
         for (String file : files)
-            sb.append("  <file>" + file + "</file>\n");
+            sb.append("  <file>").append(file).append("</file>\n");
         for (String param : params)
-            sb.append("  <param>" + param + "</param>\n");
+            sb.append("  <param>").append(param).append("</param>\n");
         for (String aliases : input_aliases)
-            sb.append("  <input_aliases>" + aliases + "</input_aliases>\n");
+            sb.append("  <input_aliases>").append(aliases).append("</input_aliases>\n");
         for (String aliases : output_aliases)
-            sb.append("  <output_aliases>" + aliases + "</output_aliases>\n");
+            sb.append("  <output_aliases>").append(aliases).append("</output_aliases>\n");
 
         if (getScript() != null) {
-            sb.append("  <incount>" + getInputFileCount() + "</incount>\n");
-            sb.append("  <outcount>" + getOutputFileCount() + "</outcount>\n");
+            sb.append("  <incount>").append(getInputFileCount()).append("</incount>\n");
+            sb.append("  <outcount>").append(getOutputFileCount()).append("</outcount>\n");
 
             String script_trans = getScript().replace(">", "&gt;").replace("<", "&lt;");
-            sb.append("  <script>" + script_trans + "</script>\n");
+            sb.append("  <script>").append(script_trans).append("</script>\n");
         }
-        sb.append("  <cmd_line>" + String.valueOf(getCmdLine()) + "</cmd_line>\n");
-        sb.append("  <is_distributed>" + String.valueOf(isDistributed()) + "</is_distributed>\n");
-        sb.append("  <is_standalone_script>" + String.valueOf(standaloneScript) + "</is_standalone_script>\n");
+        sb.append("  <cmd_line>").append(String.valueOf(getCmdLine())).append("</cmd_line>\n");
+        sb.append("  <is_distributed>").append(String.valueOf(isDistributed())).append("</is_distributed>\n");
+        sb.append("  <is_standalone_script>").append(String.valueOf(standaloneScript)).append("</is_standalone_script>\n");
         sb.append("</widget>\n");
     }
 

@@ -27,8 +27,7 @@ public abstract class OozieNode implements IsSerializable {
     public OozieNode() {
     }
 
-    public void init(String id, String moduleId,
-                     int x, int y) {
+    public void init(String id, String moduleId, int x, int y) {
         this.id = id;
         this.moduleId = moduleId;
         this.x = x;

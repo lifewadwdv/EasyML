@@ -9,34 +9,33 @@ package eml.studio.shared.util;
  * Dataset type enumeration
  */
 public enum DatasetType {
-	JSON(0,"JSON"),
-	CSV(1,"CSV"),
-	TSV(2,"TSV"),
-	GENERAL(3,"General"),
-	DIRECTORY(4,"Directory");
+    JSON(0, "JSON"),
+    CSV(1, "CSV"),
+    TSV(2, "TSV"),
+    GENERAL(3, "General"),
+    DIRECTORY(4, "Directory");
 
-	private int typeCode;  
-	private String desc;
+    private int typeCode;
+    private String desc;
 
-	private DatasetType(int typeCode, String desc)
-	{
-		this.setTypeCode(typeCode);
-		this.setDesc(desc);
-	}
+    private DatasetType(int typeCode, String desc) {
+        this.setTypeCode(typeCode);
+        this.setDesc(desc);
+    }
 
-	public int getTypeCode() {
-		return typeCode;
-	}
+    public int getTypeCode() {
+        return typeCode;
+    }
 
-	private void setTypeCode(int typeCode) {
-		this.typeCode = typeCode;
-	}
+    private void setTypeCode(int typeCode) {
+        this.typeCode = typeCode;
+    }
 
-	public String getDesc() {
-		return desc;
-	}
+    public String getDesc() {
+        return desc;
+    }
 
-	private void setDesc(String desc) {
-		this.desc = desc;
-	}
+    private void setDesc(String desc) {
+        this.desc = desc;
+    }
 }

@@ -92,7 +92,7 @@ public class OozieGraph implements IsSerializable {
      * Generate a XML string for the graph
      */
     public String toXML() {
-        StringBuffer sb = new StringBuffer(5000);
+        StringBuilder sb = new StringBuilder(5000);
         sb.append("<graph>\n");
         for (OozieDatasetNode node : dnodes)
             sb.append(node.toXML());

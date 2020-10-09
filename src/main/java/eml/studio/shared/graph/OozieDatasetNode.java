@@ -43,11 +43,11 @@ public class OozieDatasetNode extends OozieNode implements IsSerializable {
     public String toXML() {
         StringBuffer sb = new StringBuffer(100);
         sb.append("<widget type='dataset'>\n");
-        sb.append("  <id>" + id + "</id>\n");
-        sb.append("  <moduleId>" + moduleId + "</moduleId>\n");
-        sb.append("  <x>" + x + "</x>\n");
-        sb.append("  <y>" + y + "</y>\n");
-        sb.append("  <file>" + file + "</file>\n");
+        sb.append("  <id>").append(id).append("</id>\n");
+        sb.append("  <moduleId>").append(moduleId).append("</moduleId>\n");
+        sb.append("  <x>").append(x).append("</x>\n");
+        sb.append("  <y>").append(y).append("</y>\n");
+        sb.append("  <file>").append(file).append("</file>\n");
         sb.append("</widget>\n");
         return sb.toString();
     }

@@ -18,7 +18,7 @@ Before you can use **EasyML Studio**, you must configure the environment which i
 <img src="./img/import_jdk.png" height ="400px"  alt="configure JDK path"/>
 </div>
 
-  
+
 ### Step 2: Configure GWT Lib Path
 
 * Make sure your IDE have install ***Maven*** and ***GWT*** plugin
@@ -142,7 +142,7 @@ Our server cluster is based on ***Docker***, thus you can build run time environ
 * You can use `docker images` to see if you have pulled these two images successfully:
 
 	<img src="./img/origin_images.png" width = "90%" alt="eml_images"/>
- 
+
 ### Step 4: Download install dependent package
 Every single server in our cluster is created by one *docker image*, and this *image* can be built via a **Dockerfile** which has defined by us and includes all utilities we need such as hadoop. Thus we need to download the **Dockerfile** and all dependent files and configuration files from our [google drive disk](https://drive.google.com/open?id=0B5Lj6qkCMBbFWW5uYlJwb2drb1k) or [Baidu Cloud](https://pan.baidu.com/s/1bpMwYSJ).
 
@@ -160,6 +160,7 @@ Every single server in our cluster is created by one *docker image*, and this *i
 * Use `sh build_network.sh` to build a network which called **shadownet**:
 
 	<img src="./img/build_network.png" style ="margin-left=100;" alt="networks">
+
 ### Run all needed containers
 
 * You can use `sh run_containers.sh` to run all servers:
@@ -169,6 +170,7 @@ Every single server in our cluster is created by one *docker image*, and this *i
 * If your have run all these four server successed: **mysql, hadoop-master, hadoop-slave1,hadoop-slave2**, you can use `docker ps` to check
 
 ### Confirm the connectivity between containers
+
 Because the hadoop cluster network communication depend on ssh, we need to confirm that the three server can do ssh log-in without password.
 
 * We can use `docker exec -it hadoop-master /bin/bash` to enter the container named *Hadoop-master*
@@ -184,13 +186,14 @@ Because the hadoop cluster network communication depend on ssh, we need to confi
 
 ### Configure local hosts 
   * Add your Localhost(Linux) or Docker IP(Windows, if you use [DockerToolBox](https://www.docker.com/products/docker-toolbox "DockerToolBox") to install, the default virtual IP is `192.168.99.100`) as `hadoop-master` , `hadoop-slave1`, `hadoop-slave2` and `mysql` to your hosts file, for example:
- 
+
 >      10.20.11.7 hadoop-master
 >      10.20.11.7 mysql
 >      10.20.11.7 hadoop-slave1
 >      10.20.11.7 hadoop-slave2
 
 ### Init Mysql database
+
  * Run `sh init_mysql.sh` to prepare the databases for *Oozie* and *EasyML Studio* 
 ### Add Tensorflow Support
 Our EML installation package in version 1.2.0 or above could support Tensorflow mode.Follow the steps bellow If you want to have a try.
@@ -219,7 +222,7 @@ Our EML installation package in version 1.2.0 or above could support Tensorflow 
 <img src="./img/browse_oozie.png" width = "90%" alt="browse_oozie"/>
 </div>
  * when you finish install oozie, you can't visit http://hadoop-master:11000/oozie/  and when you execute oozie status check by below  command in hadoop-master container, it appear connection exception:
- 
+
 >      oozie admin -oozie http://hadoop-master:11000/oozie -status
 >      //Meet below exception
 >      Error: IO_ERROR:java.net.ConnectException: Connection refused

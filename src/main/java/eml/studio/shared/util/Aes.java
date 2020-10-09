@@ -14,6 +14,8 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 
+//import javax.crypto.KeyGenerator;
+
 import sun.misc.BASE64Decoder;
 
 /**
@@ -130,7 +132,7 @@ public class Aes {
      * @throws Exception 
      */  
     public static String aesDecryptByBytes(byte[] encryptBytes, String decryptKey) throws Exception {  
-        KeyGenerator kgen = KeyGenerator.getInstance("AES");  
+        KeyGenerator kgen = KeyGenerator.getInstance("AES");
         kgen.init(128);  
   
         Cipher cipher = Cipher.getInstance(ALGORITHMSTR);  
